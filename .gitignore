@@ -35,9 +35,20 @@ models/
 *.h5
 
 # Data files
-data/raw/
+data/raw/en
+data/raw/audio.mp3
+data/raw/en.zip
+data/raw/slang_OpenSub.tsv
+data/raw/slang_OpenSub_meta.tsv
+data/raw/slang_OpenSub_negatives_meta.tsv
+data/raw/slang_OpenSub_negatives.tsv
+data/raw/urbandict-word-defs.csv
+
+
+
+
 # Exception for the lookatdata notebook
-!data/raw/lookatdata.ipynb
+
 
 # Logs
 logs/
@@ -57,3 +68,12 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
+
+
+
+## Unfinished files 
+notebooks/exploration/api_slang_detection.ipynb
+notebooks/exploration/bert_slang_detection.ipynb
+
+# Proposal 
+Proposal/CPSC577_Lingo_Proposal_v2_20250405.docx

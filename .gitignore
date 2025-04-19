@@ -36,7 +36,8 @@ models/
 
 # Data files
 data/raw/
-data/processed/
+# Exception for the lookatdata notebook
+!data/raw/lookatdata.ipynb
 
 # Logs
 logs/

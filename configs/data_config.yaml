@@ -1,0 +1,4 @@
+text_slang_detector:
+  test: c:\Users\jiang\Desktop\Projects\Lingo\data\processed\text\test.json
+  train: c:\Users\jiang\Desktop\Projects\Lingo\data\processed\text\train.json
+  validation: c:\Users\jiang\Desktop\Projects\Lingo\data\processed\text\val.json

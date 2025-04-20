@@ -43,7 +43,10 @@ data/raw/slang_OpenSub_meta.tsv
 data/raw/slang_OpenSub_negatives_meta.tsv
 data/raw/slang_OpenSub_negatives.tsv
 data/raw/urbandict-word-defs.csv
-
+data/processed/text/sample.json
+data/processed/text/test.json
+data/processed/text/train.json
+data/processed/text/val.json
 
 
 

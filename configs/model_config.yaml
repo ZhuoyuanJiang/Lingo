@@ -8,5 +8,5 @@ text_slang_detector:
     - k_proj
     - v_proj
     - o_proj
-  name: Qwen/Qwen-1_5-1.5B
-  output_dir: c:\Users\jiang\Desktop\Projects\Lingo\models\text_slang_detector
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  output_dir: c:\Users\jiang\Desktop\Projects\Lingo\models\text_models

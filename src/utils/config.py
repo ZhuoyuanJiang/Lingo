@@ -1,4 +1,5 @@
 import os
+from pathlib import Path # don't know if needed 
 
 # Get the project root (LINGO folder)
 def get_project_root():
@@ -15,8 +16,11 @@ def get_project_root():
 PROJECT_ROOT = get_project_root()
 RAW_DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'raw')
 PROCESSED_DATA_DIR = os.path.join(PROJECT_ROOT, 'data', 'processed', 'text')
+CONFIGS_DIR = os.path.join(PROJECT_ROOT, 'configs')
+
 
 print(f"Project root: {PROJECT_ROOT}")
 print(f"Raw data directory: {RAW_DATA_DIR}")
 print(f"Processed data directory: {PROCESSED_DATA_DIR}")
+print(f"Configs directory: {CONFIGS_DIR}")
 #get_project_root()

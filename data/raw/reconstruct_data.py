@@ -10,7 +10,9 @@ from tqdm import trange
 
 punctuations = set(string.punctuation)
 re_multispace = re.compile(r"\s+")
-# re_xml = re.compile(r"/([0-9]+).xml") # 怀疑是这里的/应该变成\ 
+# re_xml = re.compile(r"/([0-9]+).xml") # suspect that the '/' here should be changed to '\' for Windows System
+# Mac users should beware that the '/' or '\' here is correct
+
 re_xml = re.compile(r"[/\\]([0-9]+)\.xml")  # Match either / or \ before the ID, and escape the dot
 
 data_dir_prefix = "en/OpenSubtitles/xml/en/"

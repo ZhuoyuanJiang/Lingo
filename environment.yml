@@ -247,4 +247,8 @@ dependencies:
       - widgetsnbextension==4.0.13
       - xxhash==3.5.0
       - yarl==1.18.3
+      - peft==0.15.2
+      - bitsandbytes==0.45.5
+      - accelerate==1.6.0
+      - sentencepiece==0.2.0
 prefix: /home/zhuoyuan/miniconda3/envs/lingo_env

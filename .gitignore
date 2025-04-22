@@ -48,7 +48,11 @@ data/processed/text/test.json
 data/processed/text/train.json
 data/processed/text/val.json
 
-
+# Draft Files or on the process file
+data/processed/text/dataset_preparation.pdf
+data/processed/text/dataset_preparation.html 
+scripts/train_text_model_1.ipynb
+scripts/train_text_model.py
 
 # Exception for the lookatdata notebook
 

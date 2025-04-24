@@ -35,14 +35,11 @@ models/
 *.h5
 
 # Data files
-data/raw/en
 data/raw/audio.mp3
-data/raw/en.zip
-data/raw/slang_OpenSub.tsv
-data/raw/slang_OpenSub_meta.tsv
-data/raw/slang_OpenSub_negatives_meta.tsv
-data/raw/slang_OpenSub_negatives.tsv
-data/raw/urbandict-word-defs.csv
+
+data/raw/text/*
+!data/raw/text/*.ipynb
+!data/raw/text/*.py
 data/processed/text/sample.json
 data/processed/text/test.json
 data/processed/text/train.json
@@ -83,4 +80,6 @@ notebooks/exploration/api_slang_detection.ipynb
 notebooks/exploration/bert_slang_detection.ipynb
 
 # Proposal 
+Proposal/
 Proposal/CPSC577_Lingo_Proposal_v2_20250405.docx
+papers/

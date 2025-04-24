@@ -15,9 +15,6 @@ re_multispace = re.compile(r"\s+")
 
 re_xml = re.compile(r"[/\\]([0-9]+)\.xml")  # Match either / or \ before the ID, and escape the dot
 
-# Get the directory where the script is located
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
 data_dir_prefix = "en/OpenSubtitles/xml/en/"
 
 def parse_xml_file(xml_file):
@@ -102,13 +99,12 @@ def lookup_sent(movie_id, sent_id):
     sents = movie_sents[movie_id][sent_id-2:sent_id+1]
     return sents[1].strip(), (sents[0]+" <i> "+sents[1]+" </i> "+sents[2]).strip()
 
-# Use absolute paths for reading files
-data_meta = pd.read_csv(os.path.join(script_dir, 'slang_OpenSub_meta.tsv'), dtype=str, sep='\t').fillna('').values
+data_meta = pd.read_csv('slang_OpenSub_meta.tsv', dtype=str, sep='\t').fillna('').values
 movie_ids = data_meta[:,2]
 sent_ids = data_meta[:,3]
 movie_years = data_meta[:,5]
 
-data_neg_meta = pd.read_csv(os.path.join(script_dir, 'slang_OpenSub_negatives_meta.tsv'), dtype=str, sep='\t').fillna('').values
+data_neg_meta = pd.read_csv('slang_OpenSub_negatives_meta.tsv', dtype=str, sep='\t').fillna('').values
 movie_ids_neg = data_neg_meta[:,0]
 sent_ids_neg = data_neg_meta[:,1]
 
@@ -191,14 +187,13 @@ data_neg_contexts = np.asarray(data_neg_contexts)
 
 output = pd.DataFrame(np.hstack([data_sents[:,None], data_contexts[:,None], data_meta]), columns=['SENTENCE', 'FULL_CONTEXT', 'SLANG_TERM', 'ANNOTATOR_CONFIDENCE', 'MOVIE_ID', 'SENT_ID', 'REGION', 'YEAR', 'DEFINITION_SENTENCE', 'DEFINITION_SOURCE_URL', 'LITERAL_PARAPHRASE_OF_SLANG'])
 
-# Use absolute paths for writing files
-output.to_csv(os.path.join(script_dir, 'slang_OpenSub.tsv'), sep='\t', index=False)
+output.to_csv('slang_OpenSub.tsv', sep='\t', index=False)
 
 output_neg = pd.DataFrame(np.hstack([data_neg_sents[:,None], data_neg_contexts[:,None], data_neg_meta]), columns=['SENTENCE', 'FULL_CONTEXT', 'MOVIE_ID', 'SENT_ID', 'REGION', 'YEAR'])
 
-output_neg.to_csv(os.path.join(script_dir, 'slang_OpenSub_negatives.tsv'), sep='\t', index=False)
+output_neg.to_csv('slang_OpenSub_negatives.tsv', sep='\t', index=False)
 
 print("DONE")
 
-print(f"Processing meta-data file: {os.path.join(script_dir, 'slang_OpenSub_meta.tsv')}")
-print(f"Meta-data file exists: {os.path.exists(os.path.join(script_dir, 'slang_OpenSub_meta.tsv'))}")
+print(f"Processing meta-data file: slang_OpenSub_meta.tsv")
+print(f"Meta-data file exists: {os.path.exists('slang_OpenSub_meta.tsv')}")

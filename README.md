@@ -52,7 +52,7 @@ At the bottom there is a directory structure for your reference.
 ## Model Configurations:
 
 
-Model 3: fine tuned using a single RTX 4070 GPU, 8GB VRAM for ~94 hours. (model and training configurations are in /configs and are named model_config.yaml and training_config.yaml respectively)
+Model 3: fine tuned using a single RTX 4070 GPU, 8GB VRAM on consumer laptop Razer Blade 14 2024 for ~94 hours. (model and training configurations are in /configs and are named model_config.yaml and training_config.yaml respectively)
 
 Model Config:
 
@@ -206,3 +206,134 @@ LINGO/
     ├── api_documentation.md   # API documentation
     ├── user_guide.md          # User guide for the extension
     └── presentations/         # Presentation materials
+
+
+
+
+
+# LINGO Project Directory Structure
+
+> **Note**: This structure is not finalized and some parts are still under construction (some files just have a bare skeleton and are not functional)
+
+```
+LINGO/
+├── README.md                  # Project overview, setup instructions, usage guide
+├── environment.yml            # Environment setup
+├── setup.py                   # Package installation script
+├── .gitignore                 # Git ignore file
+│
+├── data/
+│   ├── raw/                   # Original datasets
+│   │   ├── text/              # raw OpenSubtitles dataset 
+│   │   ├── audio/             # Audio recordings
+│   │   ├── video/             # Video content
+│   │   └── multimodal/        # MELD, IEMOCAP datasets
+│   │
+│   ├── processed/             # Preprocessed data
+│   │   ├── text/              # Processed text features
+│   │   ├── audio/             # Processed audio features
+│   │   ├── video/             # Processed video features
+│   │   └── multimodal/        # Combined features
+│   │
+│   └── metadata/              # Dataset descriptions, statistics, splits
+│
+├── notebooks/
+│   ├── exploration/           # Data exploration notebooks
+│   │   ├── text_eda.ipynb
+│   │   ├── audio_eda.ipynb
+│   │   ├── video_eda.ipynb
+│   │   └── multimodal_eda.ipynb
+│   │
+│   ├── preprocessing/         # Data preprocessing notebooks
+│   │   ├── text_preprocessing.ipynb
+│   │   ├── audio_preprocessing.ipynb
+│   │   └── video_preprocessing.ipynb
+│   │
+│   ├── modeling/              # Model development notebooks
+│   │   ├── text_model.ipynb
+│   │   ├── audio_model.ipynb
+│   │   ├── video_model.ipynb
+│   │   ├── bimodal_fusion.ipynb
+│   │   └── trimodal_fusion.ipynb
+│   │
+│   └── evaluation/            # Model evaluation notebooks
+│       ├── baseline_evaluation.ipynb
+│       ├── ablation_studies.ipynb
+│       └── error_analysis.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── data_loader.py     # Data loading utilities
+│   │   ├── text_processor.py  # Text preprocessing
+│   │   ├── audio_processor.py # Audio preprocessing
+│   │   ├── video_processor.py # Video preprocessing
+│   │   └── augmentation.py    # Data augmentation techniques
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── text_model.py      # RoBERTa-based text model
+│   │   ├── audio_model.py     # Wav2Vec2.0-based audio model
+│   │   ├── video_model.py     # Vision model for video processing
+│   │   ├── fusion_models.py   # Multimodal fusion architectures
+│   │   └── attention.py       # Custom attention mechanisms
+│   │
+│   ├── training/
+│   │   ├── __init__.py
+│   │   ├── trainer.py         # Training loop implementation
+│   │   ├── loss_functions.py  # Custom loss functions
+│   │   └── metrics.py         # Evaluation metrics
+│   │
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── config.py          # Configuration management
+│   │   ├── logger.py          # Logging utilities
+│   │   ├── visualization.py   # Visualization helpers
+│   │   └── io_utils.py        # I/O utilities
+│   │
+│   └── inference/
+│       ├── __init__.py
+│       ├── predictor.py       # Inference pipeline
+│       └── postprocessing.py  # Output processing
+│
+├── configs/                   # Configuration files
+│   ├── data_config.yaml       # Data processing configs
+│   ├── model_config.yaml      # Model architecture configs
+│   └── training_config.yaml   # Training hyperparameters
+│
+├── scripts/
+│   ├── download_datasets.sh   # Dataset download scripts
+│   ├── preprocess_data.py     # Data preprocessing script
+│   ├── train_model.py         # Model training script
+│   ├── evaluate_model.py      # Model evaluation script
+│   └── run_inference.py       # Inference script
+│
+├── models/                    # Saved model checkpoints
+│   ├── text_models/           # Text-only model checkpoints
+│   ├── audio_models/          # Audio-only model checkpoints
+│   ├── video_models/          # Video-only model checkpoints
+│   ├── bimodal_models/        # Bimodal fusion model checkpoints
+│   └── trimodal_models/       # Trimodal fusion model checkpoints
+│
+├── results/
+│   ├── metrics/               # Evaluation metrics
+│   ├── visualizations/        # Plots and visualizations
+│   ├── attention_maps/        # Attention visualization
+│   └── ablation_studies/      # Ablation study results
+│
+├── chrome_extension/
+│   ├── manifest.json          # Extension manifest
+│   ├── popup/                 # Extension popup UI
+│   ├── content/               # Content scripts
+│   ├── background/            # Background scripts
+│   ├── assets/                # Extension assets
+│   └── lib/                   # JS libraries and model integration
+│
+└── docs/
+    ├── project_report.md      # Detailed project report
+    ├── api_documentation.md   # API documentation
+    ├── user_guide.md          # User guide for the extension
+    └── presentations/         # Presentation materials
+```

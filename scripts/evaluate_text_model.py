@@ -1,3 +1,6 @@
+## Unfinished, still need debug. Go to /scripts/evaluate_text_model.ipynb to see the finished version. 
+
+
 import os
 import sys
 import json

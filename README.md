@@ -10,7 +10,12 @@ Running Instructions:
 
 5. Go to data/processed/text/ and run the dataset_preparation.ipynb file to preprocess the dataset. After this, you will get 4 json files: train.json, test.json, val.json, and sample.json where sample.json is a subset of train.json. 
 
-6. After you have the processed dataset, go to the scripts folder and run the train_text_model2.ipynb file to train the text-only model. 
+6. After you have the processed dataset, go to the /scripts folder and run the train_text_model2.ipynb file to train the text-only model. This file is the entire training pipeline for the text-only model. The path is scripts/train_text_model2.ipynb. 
+
+7. After the training of text-only model is done, you can run scripts\model_evaluation.ipynb to evaluate the model. 
+
+Note: This directory structure is complicated because in the proposal we want to in the future scale up to multimodality models and we have created folders for building relevant slang detection app. Therefore, the relavant parts for the text-only model are only the files that I mentioned above. 
+
 
 
 

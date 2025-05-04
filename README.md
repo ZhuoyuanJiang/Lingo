@@ -150,8 +150,16 @@ Also, the model was trained with in total 1872 steps.
 - Overall accuracy is 0.73 across 1248 test samples
 
 
+
+
 Also, when we input sentences, these are examples of the model output:
 
+
+### Example Predictions
+
+Example 1
+
+```
 Processing example 1/5
 instruction: Identify any slang in this video subtitle: "She aint gonna fight you."
 response: slang detected: ain't
@@ -160,7 +168,11 @@ prediction: 1
 test_subset output: slang detected: ain't
 slang context: She aint gonna fight you.
 ground_truth: 1
+```
 
+Example 2
+
+```
 Processing example 2/5
 instruction: Identify any slang in this video subtitle: "Yeah, there's been none of that on the trip."
 response: no slang detected
@@ -168,6 +180,10 @@ prediction: 0
 test_subset output: slang detected: yeah
 slang context: Yeah, there's been none of that on the trip.
 ground_truth: 1
+```
+
+
+
 
 
 ## LINGO Project Directory Structure
